@@ -30,6 +30,9 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Next page"/>
+                    <connections>
+                        <action selector="didTapNext:" destination="-1" eventType="touchUpInside" id="4ku-nt-pK4"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iz1-gs-V7Q">
                     <rect key="frame" x="-3.6666666666666572" y="202" width="400.33333333333326" height="400"/>
