@@ -26,7 +26,7 @@ class StartViewController: UIViewController {
         //navigationController?.pushViewController(nextVC, animated: true)
         //This is the updated controller opening a new window that doens't dismiss
         //This was done by Zach Keyser
-        nextVC.modalPresentationStyle = .fullScreen
+        //nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
        
     }
