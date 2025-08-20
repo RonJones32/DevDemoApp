@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="DevDemoApp" customModuleProvider="target">
             <connections>
+                <outlet property="SecondImageView" destination="sE4-Jj-Zjk" id="lg8-aT-o14"/>
+                <outlet property="SecondPicLabel" destination="fTm-vh-7lI" id="pnw-Vz-gm2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +21,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-bq-2sg">
-                    <rect key="frame" x="146" y="440.66666666666669" width="101" height="21"/>
+                    <rect key="frame" x="146" y="138" width="101" height="20.666666666666657"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW3-n4-Tkp">
+                    <rect key="frame" x="155" y="178.66666666666666" width="83.333333333333314" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Dismiss"/>
+                    <connections>
+                        <action selector="dismissButton:" destination="-1" eventType="touchUpInside" id="B4C-Kh-moY"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sE4-Jj-Zjk">
+                    <rect key="frame" x="-3.6666666666666572" y="251" width="400.33333333333326" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="MJA-eg-Kiu"/>
+                        <constraint firstAttribute="height" constant="400" id="wv2-90-Yd3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-vh-7lI">
+                    <rect key="frame" x="175.66666666666666" y="691" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -28,7 +51,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nEo-bq-2sg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Zv2-Ju-dxH"/>
+                <constraint firstItem="sE4-Jj-Zjk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Bsm-PX-N1R"/>
+                <constraint firstItem="WW3-n4-Tkp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="EG1-f5-ds9"/>
+                <constraint firstItem="sE4-Jj-Zjk" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="JlU-UD-1Ie"/>
+                <constraint firstItem="fTm-vh-7lI" firstAttribute="top" secondItem="sE4-Jj-Zjk" secondAttribute="bottom" constant="40" id="XNP-Y3-mim"/>
+                <constraint firstItem="WW3-n4-Tkp" firstAttribute="top" secondItem="nEo-bq-2sg" secondAttribute="bottom" constant="20" id="Y9D-tf-8rK"/>
+                <constraint firstItem="fTm-vh-7lI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jAG-b9-8vO"/>
+                <constraint firstItem="nEo-bq-2sg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="thZ-vs-jjp"/>
                 <constraint firstItem="nEo-bq-2sg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="y27-66-sLe"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="-12.67605633802817"/>

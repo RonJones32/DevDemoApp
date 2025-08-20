@@ -9,12 +9,22 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var SecondPicLabel : UILabel!
+    @IBOutlet weak var SecondImageView : UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        SecondPicLabel.text = "This is Evil Mochi! Watch Out!"
+        
+        SecondImageView.image = UIImage(named: "Evil Mochi")
+        SecondImageView.contentMode = .scaleAspectFit
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func dismissButton(_ sender : UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

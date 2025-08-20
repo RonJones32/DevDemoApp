@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="DevDemoApp" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="iz1-gs-V7Q" id="shi-Nn-Zgm"/>
+                <outlet property="picLabel" destination="su7-lK-RqW" id="MZm-Jk-w2t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,15 +43,23 @@
                         <constraint firstAttribute="width" constant="400" id="l6T-y4-kjf"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su7-lK-RqW">
+                    <rect key="frame" x="175.66666666666666" y="652" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="su7-lK-RqW" firstAttribute="top" secondItem="iz1-gs-V7Q" secondAttribute="bottom" constant="50" id="6zw-fh-06c"/>
                 <constraint firstItem="iz1-gs-V7Q" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Dsf-Jk-DUC"/>
                 <constraint firstItem="Hr9-OP-kDF" firstAttribute="top" secondItem="gmD-tt-1TO" secondAttribute="bottom" constant="8" symbolic="YES" id="Me5-wW-y1g"/>
                 <constraint firstItem="Hr9-OP-kDF" firstAttribute="centerX" secondItem="gmD-tt-1TO" secondAttribute="centerX" id="Qjz-OW-zXR"/>
                 <constraint firstItem="gmD-tt-1TO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SWB-Uo-pUD"/>
                 <constraint firstItem="gmD-tt-1TO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="b25-3V-NrQ"/>
+                <constraint firstItem="su7-lK-RqW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="mf4-07-D8t"/>
                 <constraint firstItem="iz1-gs-V7Q" firstAttribute="top" secondItem="Hr9-OP-kDF" secondAttribute="bottom" constant="20" id="nFT-Yg-WID"/>
             </constraints>
             <point key="canvasLocation" x="3.8167938931297707" y="20.422535211267608"/>

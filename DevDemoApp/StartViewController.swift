@@ -10,8 +10,16 @@ import UIKit
 class StartViewController: UIViewController {
 
 
+    @IBOutlet weak var picLabel : UILabel!
+    @IBOutlet weak var imageView : UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        picLabel.text = "This is Mochi!"
+        
+        imageView.image = UIImage(named: "Mochi")
+        imageView.contentMode = .scaleAspectFit
      
         // Do any additional setup after loading the view.
     }
@@ -26,7 +34,7 @@ class StartViewController: UIViewController {
         //navigationController?.pushViewController(nextVC, animated: true)
         //This is the updated controller opening a new window that doens't dismiss
         //This was done by Zach Keyser
-        //nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
        
     }
