@@ -23,9 +23,8 @@ class StartViewController: UIViewController {
         let nextVC = SecondViewController()
         
         // pushes it onto the navigation stack
-        navigationController?.pushViewController(nextVC, animated: true)
-
-        
+        //navigationController?.pushViewController(nextVC, animated: true)
+        self.present(nextVC, animated: true)
     }
 
 }

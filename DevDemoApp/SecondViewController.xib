@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="DevDemoApp" customModuleProvider="target">
             <connections>
+                <outlet property="VRView" destination="qni-ew-hTr" id="AOo-qT-g5e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,17 +19,40 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qni-ew-hTr">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </arscnView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-bq-2sg">
                     <rect key="frame" x="146" y="440.66666666666669" width="101" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyx-MU-OSI">
+                    <rect key="frame" x="302" y="118" width="75" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="gpz-A9-cgn"/>
+                        <constraint firstAttribute="height" constant="35" id="xdH-7A-gUn"/>
+                    </constraints>
+                    <color key="tintColor" red="0.86078912019999998" green="0.40127183589999998" blue="0.16325918149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="VR"/>
+                    <connections>
+                        <action selector="vrMode:" destination="-1" eventType="touchUpInside" id="Dju-rj-CnK"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="qni-ew-hTr" secondAttribute="bottom" id="984-Oe-CIv"/>
+                <constraint firstItem="qni-ew-hTr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9h8-OQ-yfA"/>
+                <constraint firstItem="qni-ew-hTr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="CDH-b8-Cwq"/>
+                <constraint firstItem="qni-ew-hTr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dh2-Up-air"/>
+                <constraint firstItem="Nyx-MU-OSI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SHJ-z0-UXO"/>
                 <constraint firstItem="nEo-bq-2sg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Zv2-Ju-dxH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nyx-MU-OSI" secondAttribute="trailing" constant="16" id="xbj-91-YXT"/>
                 <constraint firstItem="nEo-bq-2sg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="y27-66-sLe"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="-12.67605633802817"/>
