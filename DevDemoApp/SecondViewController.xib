@@ -19,22 +19,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-bq-2sg">
-                    <rect key="frame" x="146" y="440.66666666666669" width="101" height="21"/>
+                    <rect key="frame" x="146" y="327" width="101" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pef-kI-7fY">
+                    <rect key="frame" x="154.66666666666666" y="160" width="84" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Dismiss"/>
+                    <connections>
+                        <action selector="didTapClose:" destination="-1" eventType="touchUpInside" id="uZI-f2-VQG"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyImage" id="7TJ-Yv-hgN">
+                    <rect key="frame" x="76" y="523" width="240" height="237"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nEo-bq-2sg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Zv2-Ju-dxH"/>
-                <constraint firstItem="nEo-bq-2sg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="y27-66-sLe"/>
+                <constraint firstItem="nEo-bq-2sg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HTy-TP-5OV"/>
+                <constraint firstItem="nEo-bq-2sg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="209" id="Qyh-pP-eXB"/>
+                <constraint firstItem="pef-kI-7fY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="42" id="dho-dj-Txc"/>
+                <constraint firstItem="pef-kI-7fY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="maQ-ri-Z5t"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="-12.67605633802817"/>
         </view>
     </objects>
     <resources>
+        <image name="MyImage" width="1170" height="1166"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

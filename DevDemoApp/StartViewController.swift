@@ -21,11 +21,20 @@ class StartViewController: UIViewController {
         print("didTapNext fired")
         
         let nextVC = SecondViewController()
+    
+        // dismissable
+        self.present(nextVC, animated: true)
+        
+        //not dismissable
+        // self.modalPresentationStyle = .fullScreen
+        
         
         // pushes it onto the navigation stack
-        navigationController?.pushViewController(nextVC, animated: true)
+        //navigationController?.pushViewController(nextVC, animated: true)
 
         
     }
 
 }
+
+// add an image to the second screen
