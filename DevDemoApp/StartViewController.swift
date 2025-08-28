@@ -27,4 +27,9 @@ class StartViewController: UIViewController {
         self.present(nextVC, animated: true)
     }
 
+    @IBAction func toDO(_ sender: Any) {
+        let todo = RonsToDoViewController()
+        self.present(todo, animated: true)
+    }
+    
 }
