@@ -28,13 +28,14 @@ class StartViewController: UIViewController {
         //not dismissable
         // self.modalPresentationStyle = .fullScreen
         
-        
         // pushes it onto the navigation stack
         //navigationController?.pushViewController(nextVC, animated: true)
-
-        
     }
 
-}
 
-// add an image to the second screen
+    @IBAction func didTapToDo(_ sender: UIButton) {
+        let todo = ToDoViewController()
+        self.present(todo, animated: true)
+    }
+    
+}
