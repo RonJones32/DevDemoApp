@@ -5,11 +5,19 @@
 //  Created by Buket on 8/28/25.
 //
 
+// Qxns to Ron:
+// 1. When StartVC.xib -> view -> layout is changed to inferred constraits from Autoresizing Mask, ERROR (show)
+// - that's why I keep it auto and then change its components to inferred constraints. Is it a problem?
+// 2. Had a problem with naming issues. Is there a common practice you follow not to mess up/confuse things?
+// 3. Photo picker? Constraints.....:(
+
+
 import UIKit
 
 class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tabView: UITableView!
+    
     
     //[dataType]()
     var data = [toDoItem]()
@@ -46,7 +54,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         return data.count
     }
     
-    //mandatory
+    //mandatory - all the logic resides here
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
         
@@ -89,7 +97,6 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(alert, animated: true)
     }
     
-    
     // Ron's func to delete
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             
@@ -100,6 +107,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
             return UISwipeActionsConfiguration(actions: [DeleteAction])
         }
     
+    // private so this func can only be called inside this file/class
     @objc private func didPullToRefresh() {
         let dummyItem = toDoItem(text: "Pulled at \(Date())", date: Date())
         data.insert(dummyItem, at: 0)   // adds on top
