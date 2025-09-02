@@ -32,4 +32,10 @@ class StartViewController: UIViewController {
         self.present(todo, animated: true)
     }
     
+    //Creates the action to send the user to the ListPage
+    @IBAction func toDOZach(_ sender: Any) {
+        let todo = ZachsToDoViewController()
+        self.present(todo, animated: true)
+    }
+    
 }
