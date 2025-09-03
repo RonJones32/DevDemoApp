@@ -33,7 +33,11 @@ class SecondViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidDisappear(true)
         VRView.session.pause()
     }
-
+    @IBAction func detect(_ sender: Any) {
+        let vr = ObjectScannerViewController()
+        self.present(vr, animated: true)
+    }
+    
     @IBAction func vrMode(_ sender: Any) {
         guard let currentFrame = VRView.session.currentFrame else { return }
 

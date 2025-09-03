@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class RonsToDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tabView: UITableView!
     var data = [toDoItem]()
+    var uid = Auth.auth().currentUser?.uid
+    var ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,19 +22,68 @@ class RonsToDoViewController: UIViewController, UITableViewDelegate, UITableView
         self.tabView.delegate = self
         self.tabView.dataSource = self
         self.tabView.register(UINib(nibName: "RonsToDoTableViewCell", bundle: nil), forCellReuseIdentifier: "toDo")
+        
+        let ref = UIRefreshControl()
+        ref.addTarget(self, action: #selector(refr), for: .valueChanged)
+        
+        tabView.refreshControl = ref
         // Do any additional setup after loading the view.
         self.getData()
     }
     
+    @objc func refr() {
+        self.data.removeAll()
+        self.getData()
+        self.tabView.refreshControl?.endRefreshing()
+    }
+    
     func getData() {
-        
-        var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yy"
-        let todaysDate = Date()
-        
-        data.append(toDoItem(theText: "Check Table Views", theImage: UIImage(systemName: "magnifyingglass.circle.fill"), date: todaysDate))
-        data.append(toDoItem(theText: "Say good job", theImage: UIImage(systemName: "hand.thumbsup.fill"), date: todaysDate))
-        data.append(toDoItem(theText: "Assign more work", theImage: UIImage(systemName: "newspaper.fill"), date: todaysDate))
+        self.ref.child("users").child(self.uid ?? "unknown2").child("toDoItems").observeSingleEvent(of: .value) { snapshot in
+            
+            for eachToDo in snapshot.children {
+                var newToDo = toDoItem()
+
+                let realToDo = eachToDo as! DataSnapshot
+                let toDoDict = realToDo.value as? [String:Any]
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yy"
+                
+                let theDate = toDoDict?["date"] as? String ?? "01-01-2000"
+                
+                let url = URL(string: toDoDict?["pic"] as? String ?? "")
+                
+                let text = toDoDict?["text"] as? String ?? "could not load"
+                
+                if url == nil || url == URL(string: ""){
+                    newToDo = toDoItem(
+                        theText: text,
+                        theImage: UIImage(),
+                        date: dateFormatter.date(from: theDate)
+                    )
+                    self.data.append(newToDo)
+                    self.tabView.reloadData()
+                }
+                else {
+                    print(url)
+                    URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                        DispatchQueue.main.async {
+                            newToDo = toDoItem(
+                                theText: text,
+                                theImage: UIImage(data: data ?? Data()),
+                                date: dateFormatter.date(from: theDate)
+                            )
+                        }
+                    }.resume()
+                    
+                    print("done")
+                    self.data.append(newToDo)
+                    self.tabView.reloadData()
+                }
+                print(newToDo)
+                
+            }
+        }
     }
     
     //mandatory
@@ -79,10 +132,13 @@ class RonsToDoViewController: UIViewController, UITableViewDelegate, UITableView
         
         let add = UIAlertAction(title: "Add", style: .default) { act in
             
-           // var newdate = Date() + a day
+        
+            let newItem = toDoItem(theText: alert.textFields?[0].text ?? "Edit this", theImage: UIImage(), date: Date())
+                        
+            self.ref.child("users").child(self.uid ?? "unknown2").child("toDoItems").child(newItem.theText ?? "item1").child("text").setValue(newItem.theText)
+            self.ref.child("users").child(self.uid ?? "unknown2").child("toDoItems").child(newItem.theText ?? "item1").child("date").setValue(newItem.date?.description)
             
-            
-            self.data.append(toDoItem(theText: alert.textFields?[0].text ?? "Edit this", theImage: UIImage(), date: Date()))
+            self.getData()
             self.tabView.reloadData()
         }
         
