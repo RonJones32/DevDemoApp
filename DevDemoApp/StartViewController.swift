@@ -16,6 +16,10 @@ class StartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func signin(_ sender: Any) {
+        let signIn = SIgnInViewController()
+        self.present(signIn, animated: true)
+    }
     @IBAction func didTapNext(_ sender: UIButton) {
         // debugging statement to see if the connection is set
         print("didTapNext fired")

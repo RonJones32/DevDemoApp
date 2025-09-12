@@ -51,6 +51,19 @@
                         <action selector="toDO:" destination="-1" eventType="touchUpInside" id="c5c-PQ-VxO"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8s-VI-ma4">
+                    <rect key="frame" x="16" y="75" width="100" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="kpF-9J-BmB"/>
+                    </constraints>
+                    <color key="tintColor" red="0.86078912019999998" green="0.40127183589999998" blue="0.16325918149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
+                    <connections>
+                        <action selector="signin:" destination="-1" eventType="touchUpInside" id="3md-Al-GvX"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,8 +73,10 @@
                 <constraint firstItem="Hr9-OP-kDF" firstAttribute="top" secondItem="gmD-tt-1TO" secondAttribute="bottom" constant="8" symbolic="YES" id="Me5-wW-y1g"/>
                 <constraint firstItem="Hr9-OP-kDF" firstAttribute="centerX" secondItem="gmD-tt-1TO" secondAttribute="centerX" id="Qjz-OW-zXR"/>
                 <constraint firstItem="gmD-tt-1TO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SWB-Uo-pUD"/>
+                <constraint firstItem="D8s-VI-ma4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Ud1-sl-u9t"/>
                 <constraint firstItem="gmD-tt-1TO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="b25-3V-NrQ"/>
                 <constraint firstItem="e1X-h5-OTU" firstAttribute="top" secondItem="iz1-gs-V7Q" secondAttribute="bottom" constant="8" symbolic="YES" id="h7Q-Ya-YeE"/>
+                <constraint firstItem="D8s-VI-ma4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="hdy-Vf-Uyr"/>
                 <constraint firstItem="iz1-gs-V7Q" firstAttribute="top" secondItem="Hr9-OP-kDF" secondAttribute="bottom" constant="20" id="nFT-Yg-WID"/>
             </constraints>
             <point key="canvasLocation" x="3.8167938931297707" y="20.422535211267608"/>

@@ -29,6 +29,8 @@ class RonsToDoViewController: UIViewController, UITableViewDelegate, UITableView
         tabView.refreshControl = ref
         // Do any additional setup after loading the view.
         self.getData()
+        
+        print(uid)
     }
     
     @objc func refr() {
